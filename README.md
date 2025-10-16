@@ -1,4 +1,5 @@
-# StorySeek: Find your next read 
+# StorySeek: Find your next read
+
 A web application that allows users to search for and filter books using Google Books API.
 
 ---
