@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar  from "./components/custom-components/SearchBar";
+import BookCarousel from "./components/custom-components/BookCarousel";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
         <h3 className="">Search for your next read</h3>
       </header>
       <SearchBar />
+      <BookCarousel />
     </div>
   );
 }
