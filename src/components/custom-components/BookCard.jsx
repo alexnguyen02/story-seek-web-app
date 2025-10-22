@@ -11,7 +11,6 @@ import {
 import { Button } from "../ui/button";
 // Make sure no-image-available.jpg stays in src/assets while other dynamic images go in public/assets
 import noImageCover from '../../assets/no-image-available.jpg';
-import { getImageURL } from "../../utils/image-util";
 
 export default function BookCard({ book }) {
   const [imageUrl, setImageUrl] = useState(''); 
