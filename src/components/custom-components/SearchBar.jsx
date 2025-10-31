@@ -4,7 +4,7 @@ import { useBook } from '../..//hooks/BookContext';
 
 export default function SearchBar() {
   const [query, setQuery] = useState(''); 
-  const { searchByQuery, bookItemsByQuery } = useBook();
+  const { searchByQuery } = useBook();
 
   const handleUserInput = (e) => {
     console.log("Search Bar: Print user input", e.target.value); // Debug console

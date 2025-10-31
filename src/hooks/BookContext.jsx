@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from "react";
-import { getBooksByQuery } from "../api.js";
+import { getBooksByQuery, getImageByAPI } from "../api.js";
 import { toast } from "sonner";
 
 const BookContext = createContext();
