@@ -20,7 +20,7 @@ export default function BookCard({ book }) {
   return (
     <HoverCard className='w-full border-4'>
       <HoverCardTrigger asChild>
-        <Card className="w-1/6 flex flex-col flex-1 py-0">
+        <Card className="w-full flex flex-col flex-1 py-0 border border-foreground">
           <img
             src={book.imageLinks.thumbnail || book.imageLinks.smallThumbnail|| noImageCover}
             alt={`${book.title} book cover`}
@@ -28,7 +28,7 @@ export default function BookCard({ book }) {
           />
         </Card>
       </HoverCardTrigger>
-      <HoverCardContent side='right' className='p-0 w-[36rem] rounded-xl' sideOffset='1'>
+      <HoverCardContent side='right' className='p-0 w-[450px] rounded-xl' sideOffset='1'>
         <Card className='full gap-0 px-3 py-3 border-4 border-ring'>
           <CardHeader>
             <CardTitle>{book.title}</CardTitle>
@@ -37,13 +37,16 @@ export default function BookCard({ book }) {
               <p>Published in {book.publishedDate}</p>
             </CardDescription>
           </CardHeader>
-          <CardContent>{book.description}</CardContent>
+          <CardContent className='flex flex-col'>
+            <p className="line-clamp-5">{book.description}</p>
+            {/* TODO: Read more button leads to the book's individual page */}
+            <span className='self-end'>read more</span>
+          </CardContent>
           <CardFooter className='flex justify-between'>
-            <p>Rating: {Array.from ({ length: book.averageRating }).map((_, index) => (
-              <Star key={index} className='inline'/>
-            )) || "No rating found"}</p>
+            <p>Rating: {book.averageRating ? Array.from ({ length: book.averageRating }).map((_, index) => (
+              <Star key={index} className='inline'/>)) : "No rating"}</p>
             <p>Number of ratings: {
-                book.ratingCount || "No number of ratings found"}</p>
+                book.ratingsCount || "N/A"}</p>
           </CardFooter>
         </Card>
       </HoverCardContent>
