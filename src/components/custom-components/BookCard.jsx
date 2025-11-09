@@ -16,11 +16,28 @@ import {
 import { Star } from "lucide-react";
 
 export default function BookCard({ book }) {
+  /**
+   * book object relevant info:
+   *  {
+   *    title: <string>
+   *    authors: <array<string>>
+   *    categories: <array<string>>
+   *    imageLinks: { "smallThumbnail": <string>, "thumbnail": <string>}
+   *    ratingsCount: <int>
+   *    averageRating: <int>
+   *    description: <string>
+   *    publishedDate: <string(yyyy-mm-dd)>
+   *  }
+   * 
+   */
 
   return (
     <HoverCard className='w-full border-4'>
       <HoverCardTrigger asChild>
-        <Card className="w-full flex flex-col flex-1 py-0 border border-foreground">
+        <Card 
+          className="w-full flex flex-col flex-1 py-0 border border-foreground"
+          onClick={() => {}}
+        >
           <img
             src={book.imageLinks.thumbnail || book.imageLinks.smallThumbnail|| noImageCover}
             alt={`${book.title} book cover`}

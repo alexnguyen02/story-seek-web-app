@@ -9,7 +9,7 @@ export default function BookCarousel() {
   useEffect(() => {
     setBookArr(bookItemsByQuery); 
   }, [bookItemsByQuery])
-
+  
   return (
     <div className='w-full grid grid-cols-6 gap-4'>
       {bookArr && bookArr.map((book, index) => {
